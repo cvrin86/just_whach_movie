@@ -1,7 +1,7 @@
 "use strict";
 
 // Clé API et conteneur principal
-const keyApi = import.meta.env.VITE_API_KEY;
+const keyApi = "cc21ebb0db4ce9af88a32340aab320b7";
 
 const container = document.querySelector(".movie-container");
 
@@ -59,7 +59,14 @@ const displayMovieDetails = async (movieId) => {
         <p class="movie-genres"><strong>Genres :</strong> ${movie.genres
           .map((genre) => genre.name)
           .join(", ")}</p>
-        <p><strong>Note :</strong> ${movie.vote_average}</p>
+        <p class="movie-extra">
+          <span><strong>Note :</strong> ${movie.vote_average} / 10</span>
+          <span><strong>Popularité :</strong> ${movie.popularity}</span>
+        </p>
+        <p class="movie-extra">
+          <span><strong>Durée :</strong> ${movie.runtime} min</span>
+          <span><strong>Langue originale :</strong> ${movie.original_language?.toUpperCase()}</span>
+        </p>
       </article>
     `;
 
